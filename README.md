@@ -1,4 +1,4 @@
-# react-vite-templete
+# react-vite-template
 
 ## dependencies
 
