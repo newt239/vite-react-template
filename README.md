@@ -7,5 +7,5 @@
 - Vite
 - TypeScript
 - Tanstack Router
-- ESLint
+- ESLint (Flat Config)
 - Prettier
