@@ -1,32 +1,47 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import js from '@eslint/js';
-import typeScriptESLint from '@typescript-eslint/eslint-plugin';
-import typeScriptESLintParser from '@typescript-eslint/parser';
+import eslint from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import globals from 'globals';
+import importPlugin from 'eslint-plugin-import';
+import tseslint from 'typescript-eslint';
 
-const compat = new FlatCompat();
-
-export default [
-  {
-    ignores: ['dist'],
-  },
-  js.configs.recommended,
+export default tseslint.config(
+  eslint.configs.recommended,
+  ...tseslint.configs.recommended,
   eslintConfigPrettier,
-  ...compat.extends('plugin:@typescript-eslint/eslint-recommended'),
+  importPlugin.flatConfigs.recommended,
   {
-    plugins: {
-      typeScriptESLint,
-    },
+    files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
-      parser: typeScriptESLintParser,
-      parserOptions: {
-        sourceType: 'module',
-        ecmaVersion: 2020,
-        globals: globals.browser,
-      }
+      ecmaVersion: 'latest',
+      sourceType: 'module',
     },
     rules: {
-    }
+      "import/no-unresolved": "off",
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            "builtin",
+            "external",
+            "parent",
+            "sibling",
+            "index",
+            "object",
+            "type"
+          ],
+          "pathGroups": [
+            {
+              "pattern": "{react,react-dom/**,react-router-dom}",
+              "group": "bulitin",
+              "position": "before"
+            }
+          ],
+          "pathGroupsExcludedImportTypes": ["builtin"],
+          "alphabetize": {
+            "order": "asc"
+          },
+          "newlines-between": "always"
+        }
+      ]
+    },
   }
-];
+);
