@@ -6,6 +6,8 @@ updates:
       interval: "weekly"
       timezone: "Asia/Tokyo"
       time: "08:00"
+    cooldown:
+      default-days: 1
     target-branch: "main"
     groups:
       all-dependencies:
