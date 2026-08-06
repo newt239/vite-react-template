@@ -106,6 +106,7 @@ export default defineConfig({
       "react-perf/jsx-no-new-array-as-prop": "off",
       "react-perf/jsx-no-new-function-as-prop": "off",
       "react-perf/jsx-no-new-object-as-prop": "off",
+      "react/function-component-definition": ["warn", { namedComponents: "arrow-function" }],
       "react/jsx-filename-extension": ["warn", { extensions: [".tsx"] }],
       "react/jsx-max-depth": "off",
       "react/jsx-no-literals": "off",
