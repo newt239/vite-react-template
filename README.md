@@ -18,7 +18,7 @@
 
 ## セットアップ
 
-Node.js のバージョンは `.node-version` / `mise.toml` で固定しています。
+Node.js のバージョンは `package.json` の `devEngines.runtime` で固定しています。pnpm が `pnpm run` 経由のコマンドを指定バージョンの Node で実行し、未取得の場合は自動でダウンロードするため、別途バージョンマネージャーを用意する必要はありません。CI も同じフィールドを参照します。
 
 ```bash
 pnpm install

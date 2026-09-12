@@ -40,5 +40,12 @@
     "vite": "8.2.2",
     "vite-plus": "0.3.0"
   },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "26.8.2",
+      "onFail": "download"
+    }
+  },
   "packageManager": "pnpm@11.20.0"
 }
