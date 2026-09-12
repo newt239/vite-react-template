@@ -99,6 +99,7 @@ export default defineConfig({
       "no-plusplus": "off",
       "no-ternary": "off",
       "no-undefined": "off",
+      "one-var": "off",
       "oxc/no-async-await": "off",
       "oxc/no-barrel-file": "off",
       "oxc/no-optional-chaining": "off",
