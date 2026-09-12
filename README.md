@@ -12,9 +12,8 @@
 
 ### 開発補助ツール
 
-- [lefthook](https://lefthook.dev/) — git hooks (pre-commit で lint / format / ls-lint を自動実行)
+- [lefthook](https://lefthook.dev/) — git hooks (pre-commit で lint / format を自動実行)
 - [knip](https://knip.dev/) — 未使用の依存・エクスポートの検出
-- [ls-lint](https://ls-lint.org/) — ファイル命名規則 (kebab-case) のチェック
 
 ## セットアップ
 
@@ -36,7 +35,6 @@ pnpm run dev
 | `pnpm run lint` / `lint:fix`     | Oxlint によるリント (`vp lint`)         |
 | `pnpm run format` / `format:fix` | Oxfmt によるフォーマット (`vp fmt`)     |
 | `pnpm run test` / `test:watch`   | Vitest によるテスト (`vp test`)         |
-| `pnpm run ls-lint`               | ファイル命名規則チェック                |
 | `pnpm run knip`                  | 未使用の依存・エクスポート検出          |
 | `pnpm run codecheck`             | 上記チェックの一括実行 (CI と同等)      |
 
