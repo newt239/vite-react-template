@@ -5,14 +5,13 @@
   "type": "module",
   "scripts": {
     "build": "vp build",
-    "codecheck": "pnpm run typecheck && pnpm run lint && pnpm run format && pnpm run ls-lint && pnpm run knip && pnpm run test",
+    "codecheck": "pnpm run typecheck && pnpm run lint && pnpm run format && pnpm run knip && pnpm run test",
     "dev": "vp dev",
     "format": "vp fmt --check",
     "format:fix": "vp fmt",
     "knip": "knip",
     "lint": "vp lint",
     "lint:fix": "vp lint --fix",
-    "ls-lint": "ls-lint",
     "preinstall": "npx only-allow pnpm",
     "preview": "vp preview",
     "test": "vp test run",
@@ -25,13 +24,12 @@
     "react-router": "8.3.1"
   },
   "devDependencies": {
-    "@ls-lint/ls-lint": "2.3.1",
     "@testing-library/dom": "10.4.1",
     "@testing-library/jest-dom": "7.0.1",
     "@testing-library/react": "16.3.3",
     "@types/node": "26.4.1",
     "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.5",
+    "@types/react-dom": "19.2.7",
     "@vitejs/plugin-react": "6.1.1",
     "jsdom": "30.0.1",
     "knip": "6.34.0",
@@ -40,5 +38,12 @@
     "vite": "8.2.2",
     "vite-plus": "0.3.0"
   },
-  "packageManager": "pnpm@11.20.0"
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "26.8.2",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.4.1"
 }

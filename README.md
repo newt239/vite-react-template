@@ -12,13 +12,12 @@
 
 ### 開発補助ツール
 
-- [lefthook](https://lefthook.dev/) — git hooks (pre-commit で lint / format / ls-lint を自動実行)
+- [lefthook](https://lefthook.dev/) — git hooks (pre-commit で lint / format を自動実行)
 - [knip](https://knip.dev/) — 未使用の依存・エクスポートの検出
-- [ls-lint](https://ls-lint.org/) — ファイル命名規則 (kebab-case) のチェック
 
 ## セットアップ
 
-Node.js のバージョンは `.node-version` / `mise.toml` で固定しています。
+Node.js のバージョンは `package.json` の `devEngines.runtime` で固定しています。pnpm が `pnpm run` 経由のコマンドを指定バージョンの Node で実行し、未取得の場合は自動でダウンロードするため、別途バージョンマネージャーを用意する必要はありません。CI も同じフィールドを参照します。
 
 ```bash
 pnpm install
@@ -36,7 +35,6 @@ pnpm run dev
 | `pnpm run lint` / `lint:fix`     | Oxlint によるリント (`vp lint`)         |
 | `pnpm run format` / `format:fix` | Oxfmt によるフォーマット (`vp fmt`)     |
 | `pnpm run test` / `test:watch`   | Vitest によるテスト (`vp test`)         |
-| `pnpm run ls-lint`               | ファイル命名規則チェック                |
 | `pnpm run knip`                  | 未使用の依存・エクスポート検出          |
 | `pnpm run codecheck`             | 上記チェックの一括実行 (CI と同等)      |
 

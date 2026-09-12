@@ -4,3 +4,6 @@ allowBuilds:
   lefthook: true
 saveExact: true
 minimumReleaseAge: 10080
+minimumReleaseAgeExcludePrune: true
+minimumReleaseAgeExclude:
+  - "@pnpm/exe.*"
