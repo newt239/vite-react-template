@@ -10,6 +10,7 @@
       "#/*": ["./src/*"],
       "vite": ["./node_modules/vite-plus/dist/index.d.ts"] // @vitejs/plugin-react の Plugin 型を vite-plus と同一宣言に解決する
     },
+    "types": ["node"],
     "resolveJsonModule": true,
     "allowJs": false,
     "strict": true,
