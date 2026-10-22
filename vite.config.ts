@@ -1,6 +1,7 @@
 import react from "@vitejs/plugin-react";
 import path from "node:path";
 import { defineConfig } from "vite-plus";
+import { voidPlugin } from "void";
 
 export default defineConfig({
   fmt: {
@@ -131,7 +132,8 @@ export default defineConfig({
       "vite-plus/prefer-vite-plus-imports": "error",
     },
   },
-  plugins: [react()],
+  // Vitest の実行中は voidPlugin を読み込まない。Workers ランタイム用の dev サーバーが Vitest のサーバーと競合するため
+  plugins: [...(process.env.VITEST ? [] : [voidPlugin()]), react()],
   resolve: {
     alias: {
       "#": path.resolve(import.meta.dirname, "src"),

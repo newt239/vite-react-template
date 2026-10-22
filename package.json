@@ -6,6 +6,9 @@
   "scripts": {
     "build": "vp build",
     "codecheck": "pnpm run typecheck && pnpm run lint && pnpm run format && pnpm run knip && pnpm run test",
+    "db:generate": "void db generate",
+    "db:migrate": "void db migrate",
+    "deploy": "void deploy",
     "dev": "vp dev",
     "format": "vp fmt --check",
     "format:fix": "vp fmt",
@@ -16,12 +19,13 @@
     "preview": "vp preview",
     "test": "vp test run",
     "test:watch": "vp test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "void prepare && tsc --noEmit"
   },
   "dependencies": {
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "react-router": "8.4.0"
+    "react-router": "8.4.0",
+    "zod": "4.6.7"
   },
   "devDependencies": {
     "@testing-library/dom": "10.4.2",
@@ -35,8 +39,9 @@
     "knip": "6.41.0",
     "lefthook": "2.2.2",
     "typescript": "7.0.2",
-    "vite": "8.3.4",
-    "vite-plus": "1.1.0"
+    "vite": "catalog:",
+    "vite-plus": "catalog:",
+    "void": "1.1.0"
   },
   "devEngines": {
     "runtime": {

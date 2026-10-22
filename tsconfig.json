@@ -1,4 +1,5 @@
 {
+  "extends": "./.void/tsconfig.json", // void prepare が生成する @schema などのパス・型定義を読み込む
   "compilerOptions": {
     "incremental": true,
     "target": "esnext",
@@ -8,9 +9,14 @@
     "moduleResolution": "bundler",
     "paths": {
       "#/*": ["./src/*"],
+      // paths は extends 元とマージされないため、.void/tsconfig.json の定義をここにも書く
+      "@schema": ["./db/schema.ts"],
+      "@schema/*": ["./db/schema/*"],
+      "void/db": ["./.void/db.d.ts"],
+      "void/routes": ["./.void/routes.d.ts"],
       "vite": ["./node_modules/vite-plus/dist/index.d.ts"] // @vitejs/plugin-react の Plugin 型を vite-plus と同一宣言に解決する
     },
-    "types": ["node"],
+    "types": ["node", "void/env"],
     "resolveJsonModule": true,
     "allowJs": false,
     "strict": true,
@@ -24,6 +30,6 @@
     "isolatedModules": true,
     "skipLibCheck": true
   },
-  "include": ["src", "tests", "vite.config.ts"],
+  "include": ["src", "tests", "routes", "db", "vite.config.ts", "void.config.ts"],
   "exclude": ["node_modules"]
 }

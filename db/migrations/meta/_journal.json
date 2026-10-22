@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1792664048676,
+      "tag": "20261022101408_dusty_wendell_vaughn",
+      "breakpoints": true
+    }
+  ]
+}

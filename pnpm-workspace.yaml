@@ -1,9 +1,33 @@
 packages:
   - "./"
 allowBuilds:
+  better-sqlite3: false
+  esbuild: true
   lefthook: true
+  sharp: true
+  workerd: true
 saveExact: true
 minimumReleaseAge: 10080
 minimumReleaseAgeExcludePrune: true
 minimumReleaseAgeExclude:
   - "@pnpm/exe.*"
+  - vite-plus
+  - "@voidzero-dev/*"
+  - oxlint
+  - "@oxlint/*"
+  - oxlint-tsgolint
+  - "@oxlint-tsgolint/*"
+  - oxfmt
+  - "@oxfmt/*"
+  - vitest
+  - "@vitest/*"
+catalog:
+  vite: npm:@voidzero-dev/vite-plus-core@1.1.0
+  vite-plus: 1.1.0
+overrides:
+  vite@*: "catalog:"
+peerDependencyRules:
+  allowAny:
+    - vite
+  allowedVersions:
+    vite: "*"
