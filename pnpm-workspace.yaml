@@ -1,7 +1,11 @@
 packages:
   - "./"
 allowBuilds:
+  better-sqlite3: false
+  esbuild: true
   lefthook: true
+  sharp: true
+  workerd: true
 saveExact: true
 minimumReleaseAge: 10080
 minimumReleaseAgeExcludePrune: true

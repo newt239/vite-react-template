@@ -24,4 +24,11 @@ dist-ssr
 .env
 # TypeScript
 *.tsbuildinfo
+
+# Void
+.void
+.wrangler
+.void-wrangler.jsonc
+.env.*
+!.env.example
 .vitest/

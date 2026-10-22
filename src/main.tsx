@@ -3,17 +3,10 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
-import { Home } from "#/routes/home";
-import { RootLayout } from "#/routes/root-layout";
+import { routes } from "#/router";
 import "#/index.css";
 
-const router = createBrowserRouter([
-  {
-    Component: RootLayout,
-    children: [{ Component: Home, index: true }],
-    path: "/",
-  },
-]);
+const router = createBrowserRouter(routes);
 
 const rootElement = document.querySelector("#root");
 
