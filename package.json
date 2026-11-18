@@ -46,7 +46,7 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "26.11.1",
+      "version": "26.13.1",
       "onFail": "download"
     }
   },
